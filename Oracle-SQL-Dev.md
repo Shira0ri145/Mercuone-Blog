@@ -5,7 +5,8 @@
 
 ![image](https://user-images.githubusercontent.com/101574457/212534487-fa5eb755-a518-45dd-ac3c-7365b882bd94.png)
 
-pass : QTXH*****@                                                        
+Global db name : oracledb                       
+pass : Qwe123@                                                                          
 ![image](https://user-images.githubusercontent.com/101574457/212534591-76d8ed8d-c97e-4ff6-8d2c-4ad121114827.png)
 
 ![image](https://user-images.githubusercontent.com/101574457/212534642-74950887-206c-4dda-b97c-7037bd474693.png)
