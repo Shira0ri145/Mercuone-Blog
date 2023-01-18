@@ -8,7 +8,14 @@
 
 <img width="595" alt="image" src="https://user-images.githubusercontent.com/101574457/213105822-0d45d354-0925-4f73-8acb-ef3051ad5020.png">
  -  หากเจอกรณี Could not get lock/ver/lib/dpkg/lock ให้ไปดูวิธีการแก้ไขที่หัวข้างด้านล่าง
- - เมื่อทำการ install python3.10-venv เสร็จ
+ - เมื่อทำการ install python3.10-venv เสร็จ จะมี activate และ pip ต่างๆขึนมาใน bin
+ 
+ <img width="889" alt="image" src="https://user-images.githubusercontent.com/101574457/213185792-1b52eb21-c0b3-47be-8209-1f35e551c73f.png">
+ 
+ - ทำการ source projectenv/bin/activate เพิ่ิอ ------
+ 
+
+ 
 
 
 ## แก้ไข “Could not get lock /var/lib/dpkg/lock” Error ใน Ubuntu
@@ -20,6 +27,7 @@
 จากนั้นก้ทำการ python3 -m venv projectenv และ sudo apt install python3.10-venv ใหม่อีกรอบ
 
 <img width="732" alt="image" src="https://user-images.githubusercontent.com/101574457/213108851-c7423a81-c335-4bdc-8fd7-0a2df7ecb562.png">
+
 
 
 
