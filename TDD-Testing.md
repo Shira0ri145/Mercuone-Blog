@@ -46,6 +46,7 @@
  - จากนั้นพิม python manage.py runserver อีกครั้ง
 <img width="880" alt="image" src="https://user-images.githubusercontent.com/101574457/213207566-0444aa1f-7403-45d9-936d-7ae84b51c4f9.png">
 
+<img width="880" alt="image" src="https://user-images.githubusercontent.com/101574457/213208906-add8eb86-209c-4942-bbf7-ed2de70e5393.png">
 
 
 
