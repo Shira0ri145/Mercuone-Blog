@@ -19,13 +19,35 @@
  <img width="834" alt="image" src="https://user-images.githubusercontent.com/101574457/213189032-74ef93b5-e0e4-46f0-98c7-1bc9672bf69c.png">
  
  - จากนั้นทำการลง django โดยการ python3 -m pip install Django     
+ - ใช้คำสั่ง vi functional_test.py ในการสร้างและเปิดไลฟ์ function_test.py
  
  <img width="850" alt="image" src="https://user-images.githubusercontent.com/101574457/213193086-4761a32b-0958-4c7a-89dc-53d52da5a0ee.png">
 
+ - เมื่อเข้ามาในไฟล์ function_test.py จะสามารถเขียนโค๊ด python ในนี้ได้ หากต้องการออกจากไฟล์ ให้ทำการพิม :wq เพื่อออกจากไฟล์
+ 
+ <img width="850" alt="image" src="https://user-images.githubusercontent.com/101574457/213193671-efa4556d-07b5-4d78-bdf0-db55d8f2ab8e.png">
+ 
+ - ทำการเขียน โค๊ดเปิด firefox ให้ลิ้งไปที่ localhost:8000 ใน functional_tests.py
+ <img width="334" alt="image" src="https://user-images.githubusercontent.com/101574457/213198415-c086e452-c0fd-4de6-a7c9-a02185e1b5b6.png">
+
+ - พิมคำสั่ง python3 functional_tests.py ใน terminal จะทำการรันไฟล์ functional_tests.py และทำการเปิด firefox ที่ลิ้ง localhost:8000 แต่จะยัง Error 
+ <img width="858" alt="image" src="https://user-images.githubusercontent.com/101574457/213202050-23b98d4f-e530-4af9-9151-5d541e1a4a6d.png">
+ 
+<img width="858" alt="image" src="https://user-images.githubusercontent.com/101574457/213202152-81a33258-0926-4fd3-900f-b9862aec7e1a.png">
+
+ - ทำการรันคำสั่ง django-admin startproject superlists .
+ และรันคำสั่ง python manage.py runserver
+  จะมี Error ขึ้นมาให้เรา apply migrate ก่อนถึงจะเริ่มทำงาน
+ <img width="858" alt="image" src="https://user-images.githubusercontent.com/101574457/213206208-ef09e837-ab5c-4de3-b18c-7e348cebbf9d.png">
+ 
+ - พิมคำสั่ง python manage.py migrate
+ <img width="880" alt="image" src="https://user-images.githubusercontent.com/101574457/213207363-59f77efc-92a1-4d1e-b289-bceda80987d5.png">
+
+ - จากนั้นพิม python manage.py runserver อีกครั้ง
+<img width="880" alt="image" src="https://user-images.githubusercontent.com/101574457/213207566-0444aa1f-7403-45d9-936d-7ae84b51c4f9.png">
 
 
 
- <img width="840" alt="image" src="https://user-images.githubusercontent.com/101574457/213187894-0edc1052-8609-4a2e-9c9a-a256f6737ef7.png">
 
  
 
