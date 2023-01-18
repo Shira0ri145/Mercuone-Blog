@@ -13,6 +13,20 @@
  <img width="889" alt="image" src="https://user-images.githubusercontent.com/101574457/213185792-1b52eb21-c0b3-47be-8209-1f35e551c73f.png">
  
  - ทำการ source projectenv/bin/activate เพิ่ิอ ------
+ - ทำการโหลด library selenium และเก็บไว้ในไฟล์ reqiorments.txt ใน python โดยการ pip install selenium && pip freeze > requirments.txt
+ 
+ - สามารถใช้ cat {ชื่อไฟล์.txt} เพื่อเปิดดูข้อมูลใน ไฟล์ requirments.txt ได้
+ <img width="834" alt="image" src="https://user-images.githubusercontent.com/101574457/213189032-74ef93b5-e0e4-46f0-98c7-1bc9672bf69c.png">
+ 
+ - จากนั้นทำการลง django โดยการ python3 -m pip install Django     
+ 
+ <img width="850" alt="image" src="https://user-images.githubusercontent.com/101574457/213193086-4761a32b-0958-4c7a-89dc-53d52da5a0ee.png">
+
+
+
+
+ <img width="840" alt="image" src="https://user-images.githubusercontent.com/101574457/213187894-0edc1052-8609-4a2e-9c9a-a256f6737ef7.png">
+
  
 
  
