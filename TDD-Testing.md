@@ -48,11 +48,21 @@
 
 <img width="880" alt="image" src="https://user-images.githubusercontent.com/101574457/213208906-add8eb86-209c-4942-bbf7-ed2de70e5393.png">
 
-
-
+## นำข้อมูลทั้งหมดที่ทำลง Github                                 
+ - สร้างไฟล์ README.md ที่เขียนข้างในว่า TDD-Tesing
+ - จากนั้น git init จะเห็นว่าเรายังไม่ได้ลง git
+<img width="864" alt="image" src="https://user-images.githubusercontent.com/101574457/213214273-40eb7ed1-1277-40cc-b36c-70489df7bd77.png">
+ - ทำการ sudo apt install git
+ <img width="864" alt="image" src="https://user-images.githubusercontent.com/101574457/213216235-7c1c4853-f55a-4b65-b294-6616196d8c9b.png">
  
+ - จากนั้น git init อีกรอบ                                    
+ <img width="864" alt="image" src="https://user-images.githubusercontent.com/101574457/213217185-50c3be9f-d7f0-4ec0-8854-f8c65fa54a3f.png">
+ - เพิ่ม gitignore
+ <img width="864" alt="image" src="https://user-images.githubusercontent.com/101574457/213232944-dae5ff8f-6ddd-4992-9052-3c9ad52e8f9b.png">
 
- 
+ - เพิ่ม gitignore
+
+
 
 
 ## แก้ไข “Could not get lock /var/lib/dpkg/lock” Error ใน Ubuntu
