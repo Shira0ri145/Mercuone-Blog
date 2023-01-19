@@ -12,7 +12,7 @@
  
  <img width="889" alt="image" src="https://user-images.githubusercontent.com/101574457/213185792-1b52eb21-c0b3-47be-8209-1f35e551c73f.png">
  
- - ทำการ source projectenv/bin/activate เพิ่ิอ ------
+ - ทำการ source projectenv/bin/activate เพิ่ิอเข้าไปใช้งานหรือรันข้อมูลผ่าน environment
  - ทำการโหลด library selenium และเก็บไว้ในไฟล์ reqiorments.txt ใน python โดยการ pip install selenium && pip freeze > requirments.txt
  
  - สามารถใช้ cat {ชื่อไฟล์.txt} เพื่อเปิดดูข้อมูลใน ไฟล์ requirments.txt ได้
