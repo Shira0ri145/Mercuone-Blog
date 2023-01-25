@@ -32,4 +32,27 @@ we want to test two things:
 
  - Can we make this view function return some HTML which will get the functional test to pass?
 
-<img width="527" alt="image" src="https://user-images.githubusercontent.com/101574457/214475128-70e6a215-59da-4523-a064-86c06f26cac0.png">
+<img width="638" alt="image" src="https://user-images.githubusercontent.com/101574457/214553199-7ecf5c63-0e63-4d3d-b9ea-920125a1bb97.png">
+
+
+ - ทำการรันคำสั่ง จะสังเกตุว่า Error cannot import name 'home_page' from 'lists.view'
+<img width="1122" alt="image" src="https://user-images.githubusercontent.com/101574457/214553381-998d191a-b91a-4835-8c94-5eda474b17eb.png">
+
+ - เมื่อไปดูที่ lists.view ก็ไม่เจอ home_page 
+<img width="406" alt="image" src="https://user-images.githubusercontent.com/101574457/214553417-633c5a64-5665-442a-96ee-e65ec0c4ab7e.png">
+
+ - ทดการเขียน home_page = none ดูเพื่อใช้ในการ Assertion
+<img width="406" alt="image" src="https://user-images.githubusercontent.com/101574457/214554095-31c00cbe-0a16-461c-9c3a-c94500940f5a.png">
+
+ - เมื่อลอง python3 manage.py test เพื่อรัน test.py ก็จะเกิด Error ตามภาพ
+<img width="869" alt="image" src="https://user-images.githubusercontent.com/101574457/214553108-7b405b2e-1325-4d03-8000-5d8d0e13848b.png">
+
+ - The first example entry has the regular expression ^$, which means an empty string could this be the same as the root of our site, which we’ve been testing with “/”? Let’s find out what happens if we include it??
+ - ไปที่ superlists/urls.py ที่เป็นตัว URL mapping ของ Django ที่ใช้ map URL กับ View function
+<img width="648" alt="image" src="https://user-images.githubusercontent.com/101574457/214567565-d6a6b57f-71eb-42e9-94a5-fc39a1562dab.png">
+
+ - ทำการ ลบ admin URL เพราะเรายังไม่ได้ใช้ Django admin site ในตอนนี้ และลองเปลี่ยนไปใช้ตามตัวอย่างที่อยู่ใน รูปก่อนหน้านี้ url(r'^$', views.home_page, name='home'),
+ <img width="440" alt="image" src="https://user-images.githubusercontent.com/101574457/214568819-e6b933f5-5de9-473c-b892-58b6e27d0884.png">
+
+
+
