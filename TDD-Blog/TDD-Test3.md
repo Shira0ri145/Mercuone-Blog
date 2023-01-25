@@ -52,7 +52,8 @@ we want to test two things:
 <img width="648" alt="image" src="https://user-images.githubusercontent.com/101574457/214567565-d6a6b57f-71eb-42e9-94a5-fc39a1562dab.png">
 
  - ทำการ ลบ admin URL เพราะเรายังไม่ได้ใช้ Django admin site ในตอนนี้ และลองเปลี่ยนไปใช้ตามตัวอย่างที่อยู่ใน รูปก่อนหน้านี้ url(r'^$', views.home_page, name='home'),
- <img width="440" alt="image" src="https://user-images.githubusercontent.com/101574457/214568819-e6b933f5-5de9-473c-b892-58b6e27d0884.png">
+<img width="440" alt="image" src="https://user-images.githubusercontent.com/101574457/214591513-5095eed6-595c-48cd-93ca-f3567796df12.png">
+
 
 
 
