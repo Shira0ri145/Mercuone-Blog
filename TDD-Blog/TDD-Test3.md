@@ -26,3 +26,10 @@
 <img width="750" alt="image" src="https://user-images.githubusercontent.com/101574457/214329035-e3e9f80c-ceed-41a8-8456-17d65e8fb593.png">
 
 ## Django’s MVC, URLs, and View Functions
+we want to test two things:
+
+ - Can we resolve the URL for the root of the site (“/”) to a particular view function we’ve made?
+
+ - Can we make this view function return some HTML which will get the functional test to pass?
+
+<img width="527" alt="image" src="https://user-images.githubusercontent.com/101574457/214475128-70e6a215-59da-4523-a064-86c06f26cac0.png">
