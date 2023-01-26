@@ -54,6 +54,72 @@ we want to test two things:
  - ทำการ ลบ admin URL เพราะเรายังไม่ได้ใช้ Django admin site ในตอนนี้ และลองเปลี่ยนไปใช้ตามตัวอย่างที่อยู่ใน รูปก่อนหน้านี้ url(r'^$', views.home_page, name='home'),
 <img width="440" alt="image" src="https://user-images.githubusercontent.com/101574457/214591513-5095eed6-595c-48cd-93ca-f3567796df12.png">
 
+ - แต่เมื่อลอง compile แล้วเกิดปัญหาคือ cannot import name 'url' from 'django.conf.urls'
+ <img width="860" alt="image" src="https://user-images.githubusercontent.com/101574457/214776225-49ea00ee-ca0d-44e1-80d8-baf34168cc38.png">
+ 
+ - จึงทำการ foolow คลิปยูทูปนี้เพื่อแก้ไข cannot import name 'url'
+ https://youtu.be/cRrShdhqyuM <img width="320" alt="image" src="https://user-images.githubusercontent.com/101574457/214776331-ff65e2d2-7fa3-422c-bc3e-03695f2c68ff.png">
+ 
+ - นั่นก็คือเปลี่ยนจากการ import url เป็น re_path as url และเมื่อ compile อีกครั้งก็ เกิดเป็น TypeError ตาม turorial
+  <img width="869" alt="image" src="https://user-images.githubusercontent.com/101574457/214777082-d9bf8535-dd4a-431d-9a33-f1d905845474.png">
+ 
+ - จากที่เทสไปก่อนหน้านี้เราให้ home_page ค่าเป็น none จึงเปลี่ยนมันใหม่เป็น method home_page() เพื่อเมื่อมีการเรียนใช้ method นี้จะแสดงข้อมูลที่อยู่ใน method ออกมา
+ <img width="332" alt="image" src="https://user-images.githubusercontent.com/101574457/214777429-2afd555c-8ce6-4f04-ac6e-2692d84a850e.png">
 
+ - เมื่อลองทดสอบ ก็จะเห็นว่า รันผ่าน
+ <img width="918" alt="image" src="https://user-images.githubusercontent.com/101574457/214777491-9fd41992-8840-4c21-b0cf-75603f70dbf2.png">
+
+
+## Unit Testing a View
+
+ - เพิ่ม method test_home_page_returns_correct_html(self) เพื่อใช้ในการ test ว่าใน home_page มีการ return html ต่างๆไหม โดยข้อมูลที่เทสมี
+   - เทสว่า home_page มีการรับ Httprequest หรือไม่
+   - เทสว่ามีการ decode เป็น utf8 ไหม
+   - เช็คข้อมูลข้างใน home_page ว่ามีการเริ่มต้นการเขียน html ด้วย <html> หรือไม่
+   - เช็คข้อมูลข้างใน home_page ว่ามี title ชื่อว่า To-Do lists หรือไม่
+   - เช็คข้อมูลข้างใน home_page ว่ามี </html> ปิดท้ายหรือไม่
+ <img width="456" alt="image" src="https://user-images.githubusercontent.com/101574457/214778267-1aae7626-0e8b-4425-aa3a-467fffbe843f.png">
+
+ - ทำการ run test เพื่อ test ตัว unittest จะเห็นว่าเกิด Error : TypeError เพราะว่า home_page() ไม่ได้มีการสืบทอดตัว Httprequest มา
+ <img width="970" alt="image" src="https://user-images.githubusercontent.com/101574457/214779178-6dd0d7ae-b0fb-4a65-8b4e-d9acb0e0a97b.png">
+ 
+ - ทดลองใส่ Httprequest ไปใน method home_page() และ ลองรันอีกรอบ Error ก็จะเปลี่ยนเป็น AttributeError เพราะ unittest ที่เราสร้างขึ้นไว้ทดสอบมีของการ ทดสอบว่ามีการรับ Httprequest นั้นผ่านแล้วจึงไปทดสอบว่ามีการ HttpResponse กลับมา เป็น utf8 หรือไม่
+ <img width="358" alt="image" src="https://user-images.githubusercontent.com/101574457/214779624-37bcd72c-8356-45e4-bede-b6fdac38e1c4.png">
+ 
+ - เกิดการ AttributeError ขึ้น
+ <img width="730" alt="image" src="https://user-images.githubusercontent.com/101574457/214780079-56515ed6-b992-49af-a7fc-de3f7e3ecf2a.png">
+
+
+ - ทดสอบให้ method home_page() มีการ return HttpResponcse() และผลลัพน์ที่ได้คือผ่าน และไปเจอ Error ถัดไปคือ Assertion Error : start with '< html >' not found
+ <img width="353" alt="image" src="https://user-images.githubusercontent.com/101574457/214808192-b8c3c388-8aa6-43ba-8af2-043e7b903456.png">
+
+ 
+ - AssetionError : ไม่มีการเริ่มต้นการเขียน html ด้วย  <html> ใน home_page() เลยเป็น FALSE
+ <img width="430" alt="image" src="https://user-images.githubusercontent.com/101574457/214808330-112bd957-6df9-4623-98a3-93b070724753.png">
+
+
+ - ทดสอบให้ method home_page() มีการ return HttpResponcse('< html >') และผลลัพน์ที่ได้คือผ่าน และไปเจอ Error ถัดไปคือ Assertion Error : '<title>To-Do lists</title>' not found
+ <img width="366" alt="image" src="https://user-images.githubusercontent.com/101574457/214780545-122d57c2-9e18-440d-b3dc-aa5ade9d459a.png">
+ 
+  - AssetionError : ไม่มี title ที่ชื่อ To-Do lists ใน home_page()
+ <img width="592" alt="image" src="https://user-images.githubusercontent.com/101574457/214780563-b0605240-60ad-4a5a-a48e-57ac53b018a1.png">
+ 
+ - ทดสอบให้ method home_page() มีการ return HttpResponcse('< html ><title>To-Do lists</title>') และผลลัพน์ที่ได้คือผ่าน และไปเจอ Error ถัดไปคือ Assertion Error : end with </html> not found
+ <img width="538" alt="image" src="https://user-images.githubusercontent.com/101574457/214806690-d2987d7b-5700-449e-b229-ebb7cad7bfed.png">
+
+ - AssetionError : ไม่มีการสิ้นสุดการเขียน html ด้วย  '</ html >' ใน home_page()
+ <img width="538" alt="image" src="https://user-images.githubusercontent.com/101574457/214806714-fdb173c7-356e-45eb-9e45-c7863370a04f.png">
+
+ - และทำการทดสอบอีกครั้งให้ method home_page() มีการ return HttpResponcse('< html ><title>To-Do lists</title></ html >') และผลลัพน์ที่ได้คือผ่าน!
+ <img width="606" alt="image" src="https://user-images.githubusercontent.com/101574457/214806726-b6b66865-3713-4c5a-81a1-368909732658.png">
+ 
+ - ผ่านการเทส
+ <img width="445" alt="image" src="https://user-images.githubusercontent.com/101574457/214806930-e375eb5e-5ea6-41a2-b202-de78f01b2bc1.png">
+
+
+
+ - จากนั้น เราก็ลองกลับไป functional_tests.py บ้างที่เราใช้ selenium scrap web localhost:8000 มา และทำการลองรันดู ก็เกิด AssertionError ขึ้นเพราะไม่มี Title ที่ชื่อว่า The ใน localhost:8000 แล้ว เพราะว่าเราทำการเปลี่ยนให้ไปรัน method home_page() ที่ทำการสร้าง html ที่มี title ชื่อว่า To-Do lists ขึ้นมาแล้ว
+
+ - ทำการแก้โค๊ดใน functional_tests.py อีกครั้งเพื่อทำการเช็คว่าตอนนี้ Title มีคำว่า To-Do lists ในนั้นไหม
 
 
