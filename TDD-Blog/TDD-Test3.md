@@ -118,7 +118,7 @@ we want to test two things:
 
 
 
- - จากนั้น เราก็ลองกลับไป functional_tests.py บ้างที่เราใช้ selenium scrap web localhost:8000 มา และทำการลองรันดู ก็เกิด AssertionError ขึ้นเพราะไม่มี Title ที่ชื่อว่า The ใน localhost:8000 แล้ว เพราะว่าเราทำการเปลี่ยนให้ไปรัน method home_page() ที่ทำการสร้าง html ที่มี title ชื่อว่า To-Do lists ขึ้นมาแล้ว
+ - จากนั้น เราก็ลองกลับไป functional_tests.py บ้างที่เราใช้ selenium ในการ scrap web ที่ลิ้งคิอ localhost:8000 มา และทำการลองรันดู ก็เกิด AssertionError ขึ้นเพราะไม่มี Title ที่ชื่อว่า The ใน localhost:8000 แล้ว เพราะว่าเราทำการเปลี่ยนให้ไปรัน method home_page() ที่ทำการสร้าง html ที่มี title ชื่อว่า To-Do lists ขึ้นมาแล้ว
  <img width="869" alt="image" src="https://user-images.githubusercontent.com/101574457/214809946-dac252e5-f28a-441d-9846-b7b3b670b75d.png">
 
 
