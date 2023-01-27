@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Nav */
+
 header {
   background-color: #f0f0f0;
   padding: 20px;
@@ -35,7 +37,7 @@ main {
   margin-bottom: 20px;
 }
 
-//button post
+/* Btn */
 .container {
   width: 90%;
   margin: 0 auto;
@@ -63,7 +65,7 @@ main {
 
 
 
-// footer
+/* Footer */
 footer {
   background-color: #f0f0f0;
   text-align: center;

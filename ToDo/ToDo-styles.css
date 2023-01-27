@@ -1,8 +1,8 @@
-//navbar
 body {
   font-family: Arial, sans-serif;
 }
 
+/* Nav */
 header {
   background-color: #f0f0f0;
   padding: 20px;
@@ -28,16 +28,8 @@ header nav ul li a {
   padding: 10px;
 }
 
-main {
-  padding: 20px;
-}
 
-.post {
-  margin-bottom: 20px;
-}
-
-
-// to-do
+/* To-Do */
 body {
   font-family: Arial, sans-serif;
 }
