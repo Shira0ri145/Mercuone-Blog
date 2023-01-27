@@ -2,41 +2,13 @@
 <html>
   <head>
     <title>My To-Do List</title>
-    <style>
-      /*CSS styles go here*/
-      ul {
-        list-style: none;
-      }
-      input[type="text"] {
-        padding: 0.5em;
-        font-size: 1em;
-        width: 50%;
-      }
-      button {
-        padding: 0.5em;
-        font-size: 1em;
-        margin-left: 0.5em;
-      }
-    </style>
+    <link rel="stylesheet" href="../ToDo/ToDo-styles.css">
   </head>
   <body>
     <h1>To-Do List</h1>
     <input type="text" id="todo-input" placeholder="Enter a new task">
     <button id="add-button">Add</button>
     <ul id="todo-list"></ul>
-    <script>
-      // JavaScript code goes here
-      var input = document.getElementById("todo-input");
-      var addButton = document.getElementById("add-button");
-      var todoList = document.getElementById("todo-list");
-
-      addButton.addEventListener("click", function() {
-        var todo = input.value;
-        input.value = "";
-        var newLi = document.createElement("li");
-        newLi.innerHTML = todo;
-        todoList.appendChild(newLi);
-      });
-    </script>
+    <script src="ToDo-script.js"></script>
   </body>
 </html>
