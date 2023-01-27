@@ -1,19 +1,8 @@
-ul {
-    list-style: none;
-}
-input[type="text"] {
-    padding: 0.5em;
-    font-size: 1em;
-    width: 50%;
-}
-button {
-    padding: 0.5em;
-    font-size: 1em;
-    margin-left: 0.5em;
-}
-
-
 //navbar
+body {
+  font-family: Arial, sans-serif;
+}
+
 header {
   background-color: #f0f0f0;
   padding: 20px;
@@ -38,3 +27,32 @@ header nav ul li a {
   color: #333;
   padding: 10px;
 }
+
+main {
+  padding: 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+
+// to-do
+body {
+  font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+input[type="text"] {
+    padding: 0.5em;
+    font-size: 1em;
+    width: 50%;
+}
+button {
+    padding: 0.5em;
+    font-size: 1em;
+    margin-left: 0.5em;
+}
+
