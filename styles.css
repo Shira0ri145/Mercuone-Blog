@@ -35,6 +35,35 @@ main {
   margin-bottom: 20px;
 }
 
+//button post
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+}
+.col-md-4 {
+  flex: 1;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.card-title {
+  margin-top: 0;
+}
+.btn {
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+
+
+// footer
 footer {
   background-color: #f0f0f0;
   text-align: center;
