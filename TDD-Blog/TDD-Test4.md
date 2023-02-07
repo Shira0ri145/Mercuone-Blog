@@ -56,13 +56,18 @@ https://www.obeythetestinggoat.com/book/images/twp2_0401.png![image](https://use
  
  <img width="491" alt="image" src="https://user-images.githubusercontent.com/101574457/217167456-4ed800d8-40cd-4065-ae5b-bc4a37a9389e.png">
 
-    - 1. จะแทนที่การสร้าง Httprequest แบบ Manual และไปเรียกใช้ View ได้โดยตรงโดยใช้ self.client.get
+    1. จะแทนที่การสร้าง Httprequest แบบ Manual และไปเรียกใช้ View ได้โดยตรงโดยใช้ self.client.get
     เพื่อรับ URL ที่เราต้องการจะทดสอบ
-    - 2. ทดสอบว่า tempalte home.html นั้นมีการเรียกใช้ render response หรือไม่ [ it will only work for responses that were retrieved by the test client ]
-    - 3. เราจะยังเก็บ test อันเก่าที่เราทดสอบไว้ก่อน เพื่อที่จะให้แน่ใจว่า .assertTemplateUsed ที่สามารถทดสอบ คลาส Django TestCase ได้
-   
- - qasd
+    2. ทดสอบว่า tempalte home.html นั้นมีการเรียกใช้ render response หรือไม่ [ it will only work for responses that were retrieved by the test client ]
+    3. เราจะยังเก็บ test อันเก่าที่เราทดสอบไว้ก่อน เพื่อที่จะให้แน่ใจว่า .assertTemplateUsed ที่สามารถทดสอบ คลาส Django TestCase ได้
+    
+ - เมื่อทดสอบผลที่ได้คือ Test ผ่าน
+ <img width="445" alt="image" src="https://user-images.githubusercontent.com/101574457/217171098-1d22569b-0f89-449d-868e-e2481a159f16.png">
 
+ - ที่ส่วนของ chapter เราเจอการเทสผ่านบ่อยมากซึ่งมันทำให้เรารู้สึกผิดปกติเพราะว่าปกติแล้วเราจะเจอการเทสไม่ผ่านมาโดยตลอด เราจึงลองหาข้อผิดพลาดมาทดสอบดูบ้างเพื่อทดสอบว่า unittest ที่เราทำนั้นถูกต้องหรือไม่ โดยลองเปลี่ยน template ที่จะทดสอบเป็น temaplate ที่เราไม่ได้ทำการสร้างขึ้นมาดูเช่น wrong.html
+ ![Uploading image.png…]()
+
+ - ซึ่งผลลัพน์ที่ได้ก็คือ
 
  
 
