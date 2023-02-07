@@ -45,9 +45,23 @@ https://www.obeythetestinggoat.com/book/images/twp2_0401.png![image](https://use
  - ผลที่ได้จากการรัน 
  <img width="435" alt="image" src="https://user-images.githubusercontent.com/101574457/216884170-22434044-ab55-4ab3-a09a-3b43a656b464.png">
 
- - 
+## Django Test Client
+ - คราวนี้เรามาลอง Test client กันดีกว่า ซึ่งวิธีนึงที่เราสามารถทดสอบมันได้คือการใช้ ฟังก์ชั่น 'render_to_string' ของทาง Django เพื่อลอง assertEqual เพื่อเพื่อเทียบกันว่าการที่ decode ออกมาเป็น string นั้นได้ผลลัพน์เท่ากันกับ render_to_string หรือไม่
+ <img width="499" alt="image" src="https://user-images.githubusercontent.com/101574457/217161163-11b892a7-bb02-4857-ae4e-6e9aa949f353.png">
 
+ - ซึ่งผลที่ได้คือเท่ากัน
+<img width="430" alt="image" src="https://user-images.githubusercontent.com/101574457/217166425-2f4211d1-0da8-4dca-9cf4-1801bf8cb925.png">
 
+ - แต่นั้นเป็นวิธีที่ดูเทอะทะไปหน่อยในการ testing template จึงใช้เครื่องมือของ django ที่เรียกว่า django test client ที่มีวิธีการตรวจสอบ template ที่ใช้ในตัวดังนี้
+ 
+ <img width="491" alt="image" src="https://user-images.githubusercontent.com/101574457/217167456-4ed800d8-40cd-4065-ae5b-bc4a37a9389e.png">
+
+    - 1. จะแทนที่การสร้าง Httprequest แบบ Manual และไปเรียกใช้ View ได้โดยตรงโดยใช้ self.client.get
+    เพื่อรับ URL ที่เราต้องการจะทดสอบ
+    - 2. ทดสอบว่า tempalte home.html นั้นมีการเรียกใช้ render response หรือไม่ [ it will only work for responses that were retrieved by the test client ]
+    - 3. เราจะยังเก็บ test อันเก่าที่เราทดสอบไว้ก่อน เพื่อที่จะให้แน่ใจว่า .assertTemplateUsed ที่สามารถทดสอบ คลาส Django TestCase ได้
+   
+ - qasd
 
 
  
