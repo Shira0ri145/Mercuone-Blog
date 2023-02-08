@@ -3,7 +3,7 @@
  - สร้าง 3D Projet ขึ้นมาโดยผมตั้งชื่อว่า Myballs ที่แปลว่า ไ*่ของฉัน 5555
  ![image](https://user-images.githubusercontent.com/101574457/217548279-e56639ac-a64b-4ac8-97dc-4bb7a333a99b.png)
 
- - การสร้าง OBJECT เป็นอะไรที่นานมาก !! 
+ - การสร้าง PROJECT เป็นอะไรที่นานมาก !! 
  ![image](https://user-images.githubusercontent.com/101574457/217549288-f7995d79-7e50-42d1-92a9-b838fee40282.png)
 
  - เมื่อเปิดมาแล้วหน้าตาจะเป็นแบบนี้
