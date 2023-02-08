@@ -73,8 +73,57 @@ https://www.obeythetestinggoat.com/book/images/twp2_0401.png![image](https://use
 ## Refactoring
  การ Refactoring คือการเพิ่มประสิทธิภาพให้กับโค๊ด , ลดจำนวณบรรทัดกับโค๊ด ทำให้ Devoloper คนอื่่นมาอ่านและเข้าใจเนื้อความของ method แต่ละส่วนได้ง่ายขึ้น
  
- - ซึ่งผลการทดลองที่เราได้ทำการ ตรวจสอบ template นั้นมีหลักการที่คล้ายครึงกับการ Test_root_url_resolves มาเพราะ test root url นั้นมีหลักการทำงานของ unittest คล้ายกับการใช้ self.client.get('/') และหาว่า Template ที่ใช้มีการเรียกใช้ response หรือไม่ เราจึงนำ unit-test ทั้งสอบ method มารวมกับเพื่อเป็นการ Refactoring
+ - ซึ่งผลการทดลองที่เราได้ทำการ ตรวจสอบ template นั้นมีหลักการที่คล้ายครึงกับการ Test_root_url_resolves มาเพราะ test root url นั้นมีหลักการทำงานของ unittest คล้ายกับการใช้ self.client.get('/') และหาว่า Template ที่ใช้มีการเรียกใช้ response หรือไม่ เราจึงนำ unit-test ทั้งสอง method มารวมกับเพื่อเป็นการ Refactoring
  <img width="502" alt="image" src="https://user-images.githubusercontent.com/101574457/217173222-901d6a3b-d26c-4df0-8444-2875b0f6370b.png">
  
-## การ Refactoring
+ - เมื่อ Refactoring แล้วก็จะเหลือ code แค่สองบรรทัดคือ 
+  1. เช็คว่ามีการรับ response URL โดยใช้ '/' หรือไม่
+  2. มีการใช้ Template home.html จาก response รึเปล่า
+  <img width="406" alt="image" src="https://user-images.githubusercontent.com/101574457/217465715-754fde84-6c69-458c-b11d-97a54589ca8e.png">
 
+ - ซึ่งผลลัพน์ที่ได้คือรันผ่าน
+ <img width="354" alt="image" src="https://user-images.githubusercontent.com/101574457/217465753-a0f8aab5-c9ee-4dbf-91af-1cc7bd010238.png">
+
+## Test Front-Page
+
+ - จาก functional_test ในอันแรกที่มี error ไม่เจอ element h1 งั้นเรามาลองเขียนให้ตรงกับที่เราต้องการเทศกันเริ่มจาก สร้าง element h1 ที่มีข้อมูลข้างในว่า To-Do
+ <img width="277" alt="image" src="https://user-images.githubusercontent.com/101574457/217466115-4d588724-5eb2-4cd0-8ab2-58fd27aaa60b.png">
+ 
+ - ผลลัพน์ที่ได้ที่ปรากฏในเว็บเมื่อเขียน HTML
+ <img width="285" alt="image" src="https://user-images.githubusercontent.com/101574457/217466234-6c4532ed-0805-4507-8375-f74700ae6156.png">
+
+ - ผลลัพน์ที่ได้เมื่อรันเทสก็คือเจอ h1 แล้วจากนั้นก็จะทำการไปเช็ค test ตัวต่อไปซึ่งตัวต่อไปไม่มี element ที่มี id_new_item 
+ <img width="697" alt="image" src="https://user-images.githubusercontent.com/101574457/217466651-8812e1bc-ba8f-48be-af98-10dd4ca61f9f.png">
+
+ - จากนั้นลองเพิ่ม inputbox ที่มี elementid เป็น id_new_item 
+ <img width="264" alt="image" src="https://user-images.githubusercontent.com/101574457/217466804-a6a6b707-4e0c-4178-a0ab-b9d7c6bb8a44.png">
+
+ - ผลลัพน์ที่ได้ที่ปรากฏในเว็บเมื่อเขียน HTML
+ <img width="288" alt="image" src="https://user-images.githubusercontent.com/101574457/217466857-f810842e-0ba8-483f-b9a9-e91bdac5f83f.png">
+
+ - ผลลัพน์ที่ได้เมื่อรันเทสก็คือเจอ id_new_item  แล้วจากนั้นก็จะทำการไปเช็ค test ตัวต่อไปซึ่งตัวต่อไปไม่มี 'Enter a to-do item' ใน inputbox
+ <img width="671" alt="image" src="https://user-images.githubusercontent.com/101574457/217466918-92fc991e-edb1-4be5-8c88-01114e2d3003.png">
+
+ - ลองเพิ่ม placeholder ที่จะเป็นการเขียนข้อความแบบจางๆลงไปใน inputbox ว่า 'Enter a to-do item'
+ <img width="500" alt="image" src="https://user-images.githubusercontent.com/101574457/217467265-c23f8c13-77c6-47f9-ae23-ba6430de82b8.png">
+
+
+ - ผลลัพน์ที่ได้ที่ปรากฏในเว็บเมื่อเขียน HTML
+ <img width="281" alt="image" src="https://user-images.githubusercontent.com/101574457/217467294-82a7b949-71b7-4908-b2ea-a658b00188c5.png">
+
+ - ผลลัพน์ที่ได้เมื่อรันเทสก็คือเจอ 'Enter a to-do item' แล้วจากนั้นก็จะทำการไปเช็ค test ตัวต่อไปซึ่งตัวต่อไปไม่มี table ที่มี element id 'id_list_table'
+ <img width="869" alt="image" src="https://user-images.githubusercontent.com/101574457/217467379-ee1627b8-1d6f-4014-93a0-768fffc5db82.png">
+
+ - ลองเพิ่ม table ที่มี element id 'id_list_table'
+ <img width="497" alt="image" src="https://user-images.githubusercontent.com/101574457/217467848-9cb8f668-c47d-4c6e-9679-9b4767192a65.png">
+
+ - ผลลัพน์ที่ได้เมื่อรันเทสก็คือเจอ 'id_list_table' แล้วแต่ไม่เจอข้อมูลที่เป็น 1: Buy Peacoak feather
+ <img width="674" alt="image" src="https://user-images.githubusercontent.com/101574457/217468207-d2369b7f-a326-488d-ad8b-7d3d387f8550.png">
+
+ - ลองเพิ่มข้อความเมื่อ Assert Error ดูบ้าง
+ <img width="560" alt="image" src="https://user-images.githubusercontent.com/101574457/217469781-0cd8e007-ee82-4808-a889-07007611acf2.png">
+ 
+ - ผลลัพน์ที่ได้คือเมื่อไม่เจอก็จะขึ้นข้อความตามหลังมาด้วย
+ <img width="662" alt="image" src="https://user-images.githubusercontent.com/101574457/217469747-b5e00c4d-2356-4f22-9d71-830c73c6809a.png">
+
+ - สำหรับ Chapter 4 ก็มีเพียงเท่านี้เนื้อหาส่วนต่อจากนี้จะไปอยู่ใน Chapter 5 ครับ
