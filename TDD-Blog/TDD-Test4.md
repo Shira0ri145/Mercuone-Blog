@@ -65,10 +65,16 @@ https://www.obeythetestinggoat.com/book/images/twp2_0401.png![image](https://use
  <img width="445" alt="image" src="https://user-images.githubusercontent.com/101574457/217171098-1d22569b-0f89-449d-868e-e2481a159f16.png">
 
  - ที่ส่วนของ chapter เราเจอการเทสผ่านบ่อยมากซึ่งมันทำให้เรารู้สึกผิดปกติเพราะว่าปกติแล้วเราจะเจอการเทสไม่ผ่านมาโดยตลอด เราจึงลองหาข้อผิดพลาดมาทดสอบดูบ้างเพื่อทดสอบว่า unittest ที่เราทำนั้นถูกต้องหรือไม่ โดยลองเปลี่ยน template ที่จะทดสอบเป็น temaplate ที่เราไม่ได้ทำการสร้างขึ้นมาดูเช่น wrong.html
- ![Uploading image.png…]()
+ <img width="449" alt="image" src="https://user-images.githubusercontent.com/101574457/217171966-f54ca66a-0485-4a57-a00e-53308af88077.png">
 
  - ซึ่งผลลัพน์ที่ได้ก็คือ
+<img width="561" alt="image" src="https://user-images.githubusercontent.com/101574457/217172040-aff4d387-5ea0-440e-b512-8640fd613640.png">
 
+## Refactoring
+ การ Refactoring คือการเพิ่มประสิทธิภาพให้กับโค๊ด , ลดจำนวณบรรทัดกับโค๊ด ทำให้ Devoloper คนอื่่นมาอ่านและเข้าใจเนื้อความของ method แต่ละส่วนได้ง่ายขึ้น
  
-
+ - ซึ่งผลการทดลองที่เราได้ทำการ ตรวจสอบ template นั้นมีหลักการที่คล้ายครึงกับการ Test_root_url_resolves มาเพราะ test root url นั้นมีหลักการทำงานของ unittest คล้ายกับการใช้ self.client.get('/') และหาว่า Template ที่ใช้มีการเรียกใช้ response หรือไม่ เราจึงนำ unit-test ทั้งสอบ method มารวมกับเพื่อเป็นการ Refactoring
+ <img width="502" alt="image" src="https://user-images.githubusercontent.com/101574457/217173222-901d6a3b-d26c-4df0-8444-2875b0f6370b.png">
+ 
+## การ Refactoring
 
