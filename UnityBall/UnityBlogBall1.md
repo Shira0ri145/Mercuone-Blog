@@ -99,13 +99,13 @@
 ![ezgif-3-3e38afd842](https://user-images.githubusercontent.com/101574457/217582339-e805dc59-c125-462c-9256-bebe93e11b53.gif)
 
 ## ทำ Camera Controller
-  - ไปที่ Maincamera และกด Add Component จากนั้นเพิ่ม CameraController script
+  - ไปที่ Maincamera และกด Add Component จากนั้นเพิ่ม CameraController script                                                                                 
  ![image](https://user-images.githubusercontent.com/101574457/217583085-8048c8b2-9f06-4de1-a9a2-5d72cb48f551.png)
 
-  - เปิด CameraController และพิมคำสั่งตามนี้
+  - เปิด CameraController และพิมคำสั่งตามนี้                                                                                                                             
  ![image](https://user-images.githubusercontent.com/101574457/217585812-30d31399-792c-4968-8a9f-8256c612c694.png)
-  - จากนั้นก็จะมี Ballplayer ปรากฏขึ้นให้เลือก Gameobject และเราก็เลือก BallPlayer
+  - จากนั้นก็จะมี Ballplayer ปรากฏขึ้นให้เลือก Gameobject และเราก็เลือก BallPlayer                                                                                         
  ![image](https://user-images.githubusercontent.com/101574457/217586077-a0b8227b-a7f9-4ab9-bcd0-422b600f1113.png)
 
-  - เมื่อทดสอบโดยการเล่นก็จะได้ผลลัพน์ดังนี้
+  - เมื่อทดสอบโดยการเล่นก็จะได้ผลลัพน์ดังนี้                                                                                                           
  ![asdq](https://user-images.githubusercontent.com/101574457/217586836-90dd06ac-579c-4c78-8f88-097db751b0a4.gif)
