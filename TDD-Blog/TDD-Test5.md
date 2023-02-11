@@ -94,10 +94,10 @@
  <img width="454" alt="image" src="https://user-images.githubusercontent.com/101574457/217611058-835e11b3-29fd-4654-ab5b-8bc3379b4f52.png">
 
  - จากนั้นก็ refactor โค๊ดใหม่
-<img width="547" alt="image" src="https://user-images.githubusercontent.com/101574457/217613606-17b51b0f-d067-4ec8-8e7c-7a420de8e666.png">
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/217732860-c5f55e8a-e283-465e-8ddd-391aac91b52e.png">
 
  - และผลลัพน์ที่ได้ก็ออกมาเป็นลักษณะเดิม เย้
-<img width="742" alt="image" src="https://user-images.githubusercontent.com/101574457/217613720-db8aecaf-b386-4749-a036-75943dc0c76d.png">
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/217732961-4914b853-1fd2-4bb8-8ad3-b0cc70638cd2.png">
 
 ### Django ORM and Our First Model
  - ORM คือ Object-Relational Mapper คือ การ map ระหว่าง ข้อมูลที่มีความสัมพันธ์ (Relational Database) ให้มาอยู่ในรูปแบบ Object-Oriented Language และ แปลงข้อมูลที่ในรูป Object-Oriented Language กลับไปเป็น ข้อมูลที่รูปแบบข้อมูลที่มีความสัมพัมธ์ (Relational Database) ซึ่งตัวแปลงข้อมูลนี้เราจะเรียกว่า ORM
@@ -131,3 +131,5 @@
 
 - และลองทดสอบอีกทีซึ่งผลทดสอบเป็นไปได้ดีอย่างมาก
 <img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/217624466-3632c2ed-399f-41cf-ba72-3d5f029f3b8f.png">
+
+- 
