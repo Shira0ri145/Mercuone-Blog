@@ -62,3 +62,5 @@
  - ผลลัพน์ที่ได้ก็คือกว่าจะหมุนไปแต่ละทีอืดกันเลยทีเดียว                                                                                                          
 ![ez5](https://user-images.githubusercontent.com/101574457/218745597-0f756aee-b562-455c-9f3e-2851ccf56db5.gif)
 
+
+ - มีต่อแต่หมด passion ทำ blog ต่อ
