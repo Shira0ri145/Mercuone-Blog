@@ -94,4 +94,51 @@
 
  #ครื่งหลัง
  ## Separate Template for Viewing Lists
-  
+  - เราจะสร้าง unit test ใหม่เนื่องจาก home_page และ list_view จะเป็น page ที่ค่อนข้างแตกต่างจึงควรใช้เทมเพลต HTML ที่แตกต่างกัน home.html สามารถมีช่องอินพุตช่องเดียว ในขณะที่เทมเพลตใหม่ list.html สามารถดูแลการแสดงตารางของรายการที่มีอยู่
+  <img width="536" alt="image" src="https://user-images.githubusercontent.com/101574457/218944376-dcda2fb4-3270-4706-9e4e-807eb0269ee3.png">
+ - เมื่อรัน unittest
+ <img width="744" alt="image" src="https://user-images.githubusercontent.com/101574457/218956267-41fcfe24-a92a-4a26-b311-b25da590f4ef.png">
+
+ - เรามาเปลี่ยน view กันบ้างให้method view_list responce ไปที่ list.html
+  <img width="438" alt="image" src="https://user-images.githubusercontent.com/101574457/218956769-f167ab55-243f-4888-91e0-a72e3d73495a.png">
+
+ - ผลลัพน์ที่ได้ป็นแบบนี้เพรราะเรายังไม่สร้าง list.html
+ <img width="438" alt="image" src="https://user-images.githubusercontent.com/101574457/218956922-8d2289b7-7759-4204-8b5b-5c5483253f92.png">
+ - สร้าง list.html
+ <img width="740" alt="image" src="https://user-images.githubusercontent.com/101574457/218957241-150a10d0-5b34-4461-9976-c5fb709ddf89.png">
+ - แต่สิ่งที่ได้มาจะเป็นกระดาษเปล่า
+ <img width="193" alt="image" src="https://user-images.githubusercontent.com/101574457/218957481-3a312108-9673-4f65-af2d-e96be9174ab1.png">
+ - ใช้ cp เพื่อให้เอาข้อมูล home.html มาเพิ่มใน list.html ด้วย
+ <img width="742" alt="image" src="https://user-images.githubusercontent.com/101574457/218957704-aeb7fce2-74a3-41f1-8c28-3b865126a892.png">
+
+ - ไปแก้ไขที่ home.html และเอา table list ออกเพราะเราจะย้ายมันไปไว้ที่อื่นแทน
+ <img width="722" alt="image" src="https://user-images.githubusercontent.com/101574457/218958680-77fd23d3-7a8c-4617-839f-0bef61e624ba.png">
+
+ - ทดสอบดูอีกครั้งก็ไม่เกิดอะไรขึ้น เยี่ยมงั้นเราไปกันต่อ
+ <img width="362" alt="image" src="https://user-images.githubusercontent.com/101574457/218959340-cbc6c671-65e9-4192-85f0-e4a421f4b3b8.png">
+
+ - เราไม่ต้องการให้ home_page ส่งค่าออกไปทั้งหมดจึงแก้ไขเป็น
+ <img width="449" alt="image" src="https://user-images.githubusercontent.com/101574457/218959492-1be2e086-ff66-4475-8aeb-00657c3f451e.png">
+ - แล้วเรามาลอง run functional_test ดู
+ <img width="449" alt="image" src="https://user-images.githubusercontent.com/101574457/218960139-7036725c-819a-4a7e-9e76-8c5b566b8752.png">
+
+- ผลที่ได้คือ เราไม่เจอ Buy milk ในอันที่1 แต่มันมาอยู่อันที่สองแทน
+<img width="744" alt="image" src="https://user-images.githubusercontent.com/101574457/218960295-b594f22b-8445-486d-8f95-585fcc64e246.png">
+
+- ในตอนนี้ถือว่าเราทำมาได้ค่อนข้าง Ok แล้วเหลือติดแค่ปัญหาก็คือ Francis ยังมี item ของ Edith ติดมาอยู่บ้าง
+
+## A URL for Adding List Items
+- สิ่งที่เราจะต้องทำในตอนนี้
+  - ปรับให้โมเดลเชื่อมโยงกับ list ต่างๆ
+  - เพิ่ม URL ที่ไม่ซ้ำกัน
+  - เพิ่ม URL สำหรับรายการใหม่โดยการ POST
+  - เพิ่ม URL ที่มีการ Add item เข้าไปใน To-Do ผ่านการ POST
+<img width="326" alt="image" src="https://user-images.githubusercontent.com/101574457/218960774-74f3097e-331f-4b04-811f-c5e97438432f.png">
+
+## Test Class for New List Creation
+- ไปที่ lists/tests.py และย้าย method test_can_save_a_POST_request and test_redirects_after_POST ในคลาส HomePageTest ไปที่ คลาสใหม่ชื่อว่า NewListTest
+![Uploading image.png…]()
+
+- เราจะใช้ Django Test Client method ที่ชื่อว่า assertRedirects ในการทดสอบการ redirect
+
+
