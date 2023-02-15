@@ -137,8 +137,30 @@
 
 ## Test Class for New List Creation
 - ไปที่ lists/tests.py และย้าย method test_can_save_a_POST_request and test_redirects_after_POST ในคลาส HomePageTest ไปที่ คลาสใหม่ชื่อว่า NewListTest
-![Uploading image.png…]()
+
+
 
 - เราจะใช้ Django Test Client method ที่ชื่อว่า assertRedirects ในการทดสอบการ redirect
+<img width="651" alt="image" src="https://user-images.githubusercontent.com/101574457/218963057-fd1c0382-e452-4aea-8cdb-255f5e81ea88.png">
+
+<img width="744" alt="image" src="https://user-images.githubusercontent.com/101574457/218963602-4972929d-cf6c-402c-a88c-6b188b0b085d.png">
+
+## URL and View for New List Creation
+- ไปที่ superlists/urls.py และสร้าง url ใหม่ขึ้นมา
+<img width="744" alt="image" src="https://user-images.githubusercontent.com/101574457/218963698-f5191ae4-bb15-47a0-bfc3-27efda6a135e.png">
+
+- เราเมื่อลองก็จะพบว่าเรายังไม่เจอ attribute new_list  ลองไปแก้ที่ lists/views.py
+<img width="182" alt="image" src="https://user-images.githubusercontent.com/101574457/218964029-acad5ea2-b8ef-48cc-a994-127eba22f2c3.png">
+
+- สร้าง method new_list ใน view
+<img width="740" alt="image" src="https://user-images.githubusercontent.com/101574457/218964207-8326a501-68b7-490a-88e8-adc43b1674e8.png">
+- จะเห็นว่าที่เป็นปัญหาผ่านเรียบร้อยแล้วคราวนี้คือมันไม่ return HttpResponse กลับมา
+<img width="469" alt="image" src="https://user-images.githubusercontent.com/101574457/218964574-accf0586-7c00-47c2-9497-a74b01d2b0c1.png">
+
+- เราจึงทำให้ view_list return กลับมาเป็น redirect('/lists/the-only-list-in-the-world/')
 
 
+- ผลลัพน์ที่ได้
+
+
+- 
