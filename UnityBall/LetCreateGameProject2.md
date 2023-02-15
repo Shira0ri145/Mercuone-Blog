@@ -16,3 +16,7 @@
 ## นำ Scripts CameraController ที่ใช้ตอนทำลูกบอลมาใส่ Player แทน                
  - ผลลัพน์ที่ได้คือ                                                                                      
 ![ez9](https://user-images.githubusercontent.com/101574457/218839179-10470542-dede-420e-a868-1d96b66cecbe.gif)
+
+
+##  ลองสร้าง Object ใน Blender
+<img width="1464" alt="image" src="https://user-images.githubusercontent.com/101574457/218924299-9f1d6a18-ba84-4668-9c98-02d234d10670.png">
