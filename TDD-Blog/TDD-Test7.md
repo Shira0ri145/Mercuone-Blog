@@ -158,9 +158,80 @@
 <img width="469" alt="image" src="https://user-images.githubusercontent.com/101574457/218964574-accf0586-7c00-47c2-9497-a74b01d2b0c1.png">
 
 - เราจึงทำให้ view_list return กลับมาเป็น redirect('/lists/the-only-list-in-the-world/')
-
-
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219037573-d1bc7a5a-bcec-48e5-a713-5da434794da6.png">
 - ผลลัพน์ที่ได้
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219037628-e43af124-3a29-4dba-bb0c-e64921324feb.png">
+- งั้นคราวนี้ก็ลองก็อปของ home_page มาใช้ทดลองดูอีกรอบ
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219038026-ea0e4c4f-3453-4b40-ab05-5c98f42790d8.png">
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219038079-8b8f99b9-2c4a-47f6-b936-130495c6299b.png">
+
+- งั้นลอง FT กันดูบ้าง
+ <img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219038296-0854e5d6-c599-41b8-89c0-b0c8823966b5.png">
+
+ 
+## Removing Now-Redundant Code and Tests
+- ราสามารถลบส่วน if request.method == 'POST' ทั้งหมดได้หรือไม่  ซึ่งรันผ่าน OK!                          
+ <img width="305" alt="image" src="https://user-images.githubusercontent.com/101574457/219038786-baf78df3-4b54-42c3-a0e3-cd5f58345bc7.png">
+- และในขณะที่เราดำเนินการ เราสามารถลบการทดสอบที่ซ้ำซ้อนในขณะนี้_only_saves_items_when_necessary test ได้อีกด้วย!                        
+ <img width="407" alt="image" src="https://user-images.githubusercontent.com/101574457/219039387-6052967a-4d5a-4806-9f5d-4d3f189767b3.png">                                                                   
+<img width="407" alt="image" src="https://user-images.githubusercontent.com/101574457/219039431-542c64cd-1014-455b-a0bd-9401227afb32.png">        
+ 
+## A Regression! Pointing Our Forms at the New URL
+- แล้วถ้าเราลองอันเมื่อกี้แต่เป็น FT บ้างหล่ะ Oh shit!
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/219039873-b6ac0117-debc-411d-8e73-d2b42f604cd0.png">
+
+- แบบฟอร์มของเรายังคงชี้ไปที่ URL เก่า ทั้งใน home.html และlists.html งั้นมาลองเปลี่ยนมันกันไปที่ lists/templates/home.html, lists/templates/list.html
+ เพิ่ม action="/lists/new"
+ <img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/219040324-ef8dfe20-c7f0-4874-a108-4ced119900bc.png">
+ 
+- และผลลัพน์ที่ได้ก็กลับมาเป็นแบบเดิมแล้ว
+ <img width="743" alt="image" src="https://user-images.githubusercontent.com/101574457/219040466-1303b066-c468-4ce5-b0c7-c58923d7e19e.png">
+
+- ในตอนนี้เราก็ทำเสร็จไปได้แล้ว 1
+<img width="336" alt="image" src="https://user-images.githubusercontent.com/101574457/219040635-b44130de-ce3b-49cd-a472-d28d952982b5.png">
+
+## Biting the Bullet: Adjusting Our Models
+- ถึงเวลาเปลี่ยนโมเดลของเราแล้ว มาปรับ model unit test กัน
+ 
+- เราสร้าง 'List object' ใหม่และกำหนดให้แต่ละ 'item' มีการอ้างอิงไปยัง 'List object' นี้โดยการกำหนดค่าเป็น property ชื่อ .list ของแต่ละ 'item' นั้น และตรวจสอบว่า 'List object' ถูกบันทึกไว้อย่างถูกต้อง และตรวจสอบว่าสอง 'item' นั้นได้รับการบันทึกความสัมพันธ์ของตัวเองกับ 'List object' ที่ถูกกำหนดให้ โดยเราสามารถเปรียบเทียบ 'List object' กับกันโดยตรง (saved_list และ list_) โดยในพื้นหลังของการเปรียบเทียบนี้ จะมีการเปรียบเทียบ primary key (คือ attribute .id) ว่าเหมือนกันหรือไม่
+ <img width="637" alt="image" src="https://user-images.githubusercontent.com/101574457/219044258-4c54ed1f-f4a6-493f-a643-ec59dd05bf1f.png">
+<img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219046652-381fce91-374f-471f-bbeb-2e4abbf918f3.png">
+
+- และก็แก้เป็น Stepๆ เหมือนเดิม
+ <img width="160" alt="image" src="https://user-images.githubusercontent.com/101574457/219047120-4d423997-e4a8-4711-a82f-d586e68cb984.png">
+ <img width="741" alt="image" src="https://user-images.githubusercontent.com/101574457/219047688-fd210c57-9952-4f8a-a410-3982fc91753a.png">
+
+- แก้ AttributeError: 'List' object has no attribute 'save'
+<img width="203" alt="image" src="https://user-images.githubusercontent.com/101574457/219047874-0a2ed904-fbaa-4f65-b2cc-72b2e5003f2d.png">
+ <img width="453" alt="image" src="https://user-images.githubusercontent.com/101574457/219047924-139d9d0b-5c43-4a00-aa00-d8425de907cc.png">
+
+ - แก้ OperationalError: no such table: lists_list
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219048127-cb5ae2e7-9e5a-4e96-b5a6-07c30ce5863a.png">
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219049462-feedb801-8a49-4225-ba0a-2f19cfe4df4e.png">
 
 
+
+ - รันอีกรอบ
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219048212-26c7acf3-fb8a-4a05-9a72-8353f9600174.png">
+<img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219048752-8fe212b1-7445-4c81-8535-bea21aae276e.png">
+
+- แก้
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219049006-fffffaa6-7671-4227-88e0-da44b9a88f18.png">
+
+- รันอีกรอบ
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219049078-b18b9042-fc51-4085-a2b7-619f942eb991.png">
+
+- แก้ AssertionError: 'List object (1)' != <List: List object (1)>
+<img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219049633-db97b4f0-5556-4559-8c1f-29a2b8ac3bf5.png">
+
+- แก้เพราะ django แม่งใหม่เกิน
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219063319-bed197bb-8d80-48cd-9510-60e1dcd1c8d1.png">
+ <img width="739" alt="image" src="https://user-images.githubusercontent.com/101574457/219063219-772c9da0-8ff1-4cab-94d9-257cc687a67f.png">
+
+## Adjusting the Rest of the World to Our New Models
 - 
+ พอเลิกทำขก
+
+
+ 
+ 
